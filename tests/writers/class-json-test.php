@@ -2,14 +2,14 @@
 
 namespace Frozzare\Tests\WooCommerce\Export\Writers;
 
-use Frozzare\WooCommerce\Export\Writers\CSV;
+use Frozzare\WooCommerce\Export\Writers\JSON;
 
-class CSV_Test extends \WP_UnitTestCase {
+class JSON_Test extends \WP_UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
 
-		$this->writer = new CSV;
+		$this->writer = new JSON;
 	}
 
 	public function tearDown() {
@@ -20,7 +20,7 @@ class CSV_Test extends \WP_UnitTestCase {
 
 	public function test_empty() {
 		$this->writer->render( [] );
-		$this->expectOutputString( '' );
+		$this->expectOutputString( '[]' );
 	}
 
 	public function test_success() {
@@ -31,8 +31,6 @@ class CSV_Test extends \WP_UnitTestCase {
 			null
 		] );
 
-		$this->expectOutputString( 'Email
-"hello@example.com";
-' );
+		$this->expectOutputString( '[{"Email":"hello@example.com"}]' );
 	}
 }

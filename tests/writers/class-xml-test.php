@@ -9,22 +9,22 @@ class XML_Test extends \WP_UnitTestCase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->xml = new XML;
+		$this->writer = new XML;
 	}
 
 	public function tearDown() {
 		parent::tearDown();
 
-		unset( $this->xml );
+		unset( $this->writer );
 	}
 
-	public function test_xml_empty() {
-		$this->xml->render( [] );
+	public function test_empty() {
+		$this->writer->render( [] );
 		$this->expectOutputString( '<?xml version="1.0"?><orders></orders>' );
 	}
 
-	public function test_xml_success() {
-		$this->xml->render( [
+	public function test_success() {
+		$this->writer->render( [
 			[
 				'Email' => 'hello@example.com'
 			],
