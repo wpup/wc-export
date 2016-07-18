@@ -25,6 +25,7 @@ class XML extends Writer {
 			header( 'Content-Type: text/xml; charset=' . get_option( 'blog_charset' ), true );
 		}
 
+		echo '<?xml version="1.0"?>';
 		echo '<orders>';
 
 		// Output each row as a line.
@@ -42,7 +43,7 @@ class XML extends Writer {
 				$line .= sprintf( '<%s>%s</%s>', $tag, $value, $tag );
 			}
 
-			echo $line . "</order>\n";
+			echo $line . '</order>';
 		}
 
 		echo '</orders>';

@@ -20,17 +20,17 @@ class XML_Test extends \WP_UnitTestCase {
 
 	public function test_xml_empty() {
 		$this->xml->render( [] );
-		$this->expectOutputString( '' );
+		$this->expectOutputString( '<?xml version="1.0"?><orders></orders>' );
 	}
 
 	public function test_xml_success() {
-		$this->csv->render( [
+		$this->xml->render( [
 			[
 				'Email' => 'hello@example.com'
 			],
 			null
 		] );
 
-		$this->expectOutputString( '<orders><order><email>hello@example.com</email></order></orders>' );
+		$this->expectOutputString( '<?xml version="1.0"?><orders><order><email>hello@example.com</email></order></orders>' );
 	}
 }
