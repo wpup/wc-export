@@ -14,7 +14,7 @@ class XML extends Writer {
 	}
 
 	/**
-	 * Render CSV file.
+	 * Render XML file.
 	 *
 	 * @param array $data
 	 */

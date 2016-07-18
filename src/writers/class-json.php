@@ -14,7 +14,7 @@ class JSON extends Writer {
 	}
 
 	/**
-	 * Render CSV file.
+	 * Render JSON file.
 	 *
 	 * @param array $data
 	 */
