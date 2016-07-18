@@ -1,4 +1,4 @@
-# WooCommerce Export
+# WooCommerce Export [![Build Status](https://travis-ci.org/frozzare/wc-export.svg?branch=master)](https://travis-ci.org/frozzare/wc-export)
 
 Export various data from WooCommerce.
 
