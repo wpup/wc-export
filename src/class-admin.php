@@ -120,7 +120,8 @@ class Admin {
 	 */
 	public function export_writers( array $writers ) {
 		return array_merge( $writers, [
-			'CSV' => '\\Frozzare\\WooCommerce\\Export\\Writers\\CSV'
+			'CSV' => '\\Frozzare\\WooCommerce\\Export\\Writers\\CSV',
+			'XML' => '\\Frozzare\\WooCommerce\\Export\\Writers\\XML'
 		] );
 	}
 
