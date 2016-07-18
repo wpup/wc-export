@@ -1,0 +1,36 @@
+{
+  "name": "frozzare/wc-export",
+  "type": "wordpress-plugin",
+  "description": "Export various data from WooCommerce",
+  "homepage": "https://github.com/frozzare/wc-export",
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "woocommerce",
+    "export"
+  ],
+  "authors": [{
+    "name": "Fredrik Forsmo",
+    "email": "fredrik.forsmo@gmail.com",
+    "homepage": "https://github.com/frozzare"
+  }],
+  "autoload": {
+    "classmap": ["src/"],
+    "files": [
+    ]
+  },
+  "require": {
+    "php": "^5.5.9 || ^7.0"
+  },
+  "require-dev": {
+    "frozzare/wp-test-suite": "~1.0",
+    "wp-coding-standards/wpcs": "dev-develop"
+  },
+  "scripts": {
+    "post-install-cmd": "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi",
+    "post-update-cmd" : "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
