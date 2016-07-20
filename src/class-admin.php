@@ -12,6 +12,7 @@ class Admin {
 	 */
 	public function __construct() {
 		add_action( 'init', [$this, 'export'] );
+		add_action( 'init', [$this, 'load_textdomain'] );
 		add_action( 'admin_enqueue_scripts', [$this, 'enqueue_css'] );
 		add_action( 'admin_enqueue_scripts', [$this, 'enqueue_js'] );
 		add_action( 'admin_menu', [$this, 'menu'], 25 );
@@ -200,6 +201,19 @@ class Admin {
 	}
 
 	/**
+	 * Load Localisation files.
+	 *
+	 * Locales found in:
+	 * - WP_LANG_DIR/wc-export/wc-export-LOCALE.mo
+	 * - WP_CONTENT_DIR/[mu-]plugins/wc-export/languages/wc-export-LOCALE.mo
+	 */
+	private function load_textdomain() {
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc-export' );
+		load_textdomain( 'wc-export', WP_LANG_DIR . '/wc-export/wc-export-' . $locale . '.mo' );
+		load_textdomain( 'wc-export', __DIR__ . '../languages/wc-export-' . $locale . '.mo' );
+	}
+
+	/**
 	 * Add export menu.
 	 */
 	public function menu() {
@@ -253,7 +267,7 @@ class Admin {
 					<tbody>
 						<tr>
 							<th scope="row">
-								<label for="wc-export-writer"><?php _e( 'Output format', 'wc-export' ); ?></label>
+								<label for="wc-export-writer"><?php _e( 'File format', 'wc-export' ); ?></label>
 							</th>
 							<td>
 								<select name="wc_export_writer" id="wc-export-writer">
@@ -308,7 +322,7 @@ class Admin {
 
 						<tr>
 							<th scope="row">
-								<label for="wc-export-class"><?php _e( 'Expoter', 'wc-export' ); ?></label>
+								<label for="wc-export-class"><?php _e( 'Export type', 'wc-export' ); ?></label>
 							</th>
 							<td>
 								<select name="wc_export_class" id="wc-export-class">
