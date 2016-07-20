@@ -124,7 +124,7 @@ Then you have to add the custom writer to the writers list with `wc_export_write
  *
  * @return array
  */
-add_filter( 'wc_export_classes', function ( array $writers ) {
+add_filter( 'wc_export_writers', function ( array $writers ) {
 	return array_merge( $writers, [
 		'Custom JSON' => '\\Custom_JSON'
 	] );
