@@ -2,13 +2,21 @@
 
 Export various data from WooCommerce.
 
+## ToC
+* [Installation](#installation)
+* [Documentation](#documentation)
+  * [Custom export](#custom-export)
+  * [Custom writer](#custom-writer)
+
 ## Installation
 
 ```sh
 composer require frozzare/wc-export
 ```
 
-## Create custom export types
+## Documentation
+
+### Custom export
 
 Example of a custom export type that will export the `billing_email` field from a order. With `query_args` method you can modify the `WP_Query` arguments.
 
@@ -43,7 +51,7 @@ class Custom_Emails extends Export {
 }
 ```
 
-## Add custom export type to the exporter list
+Then you have to add the custom export to the exporter list with `wc_export_classes` filter.
 
 ```php
 <?php
@@ -62,7 +70,7 @@ add_filter( 'wc_export_classes', function ( array $exports ) {
 } );
 ```
 
-## Create custom export writer
+### Custom writer
 
 Example of a custom export writer that will export the given data argument to `render` method as JSON.
 
@@ -107,7 +115,7 @@ class Custom_JSON extends Writer {
 }
 ```
 
-## Add custom export writer to the writer list
+Then you have to add the custom writer to the writers list with `wc_export_writers` filter.
 
 ```php
 <?php
