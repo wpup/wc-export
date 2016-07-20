@@ -2,6 +2,10 @@
 
 Export various data from WooCommerce.
 
+The plugin cames with two exporters, a customers export that will export all billing fields and a emails exporter that will export the billing email field from a order.
+
+The are three writers built in, CSV, XML and JSON.
+
 ## Installation
 
 ```sh
