@@ -41,6 +41,12 @@ class Custom_Emails extends Export {
 		return $args;
 	}
 }
+```
+
+## Add custom export type to the exporter list
+
+```php
+<?php
 
 /**
  * Add export classes.
@@ -99,6 +105,25 @@ class Custom_JSON extends Writer {
 		$this->is_http_post() && exit;
 	}
 }
+```
+
+## Add custom export writer to the writer list
+
+```php
+<?php
+
+/**
+ * Add export writer.
+ *
+ * @param  array $writers
+ *
+ * @return array
+ */
+add_filter( 'wc_export_classes', function ( array $writers ) {
+	return array_merge( $writers, [
+		'Custom JSON' => '\\Custom_JSON'
+	] );
+} );
 ```
 
 ## License
