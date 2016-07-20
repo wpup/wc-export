@@ -66,7 +66,7 @@ add_filter( 'wc_export_classes', function ( array $exports ) {
 
 Example of a custom export writer that will export the given data argument to `render` method as JSON.
 
-```
+```php
 <?php
 
 use Frozzare\WooCommerce\Export\Writers\Writer;
