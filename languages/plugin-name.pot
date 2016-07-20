@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wc-export\n"
+"Project-Id-Version: plugin-name\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-20 12:13+0200\n"
+"POT-Creation-Date: 2016-07-20 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,4 +55,48 @@ msgstr ""
 
 #: src/class-admin.php:342
 msgid "All fields will be included if none is selected."
+msgstr ""
+
+#: src/exports/class-customers.php:14
+msgid "First name"
+msgstr ""
+
+#: src/exports/class-customers.php:15
+msgid "Last name"
+msgstr ""
+
+#: src/exports/class-customers.php:16
+msgid "Company"
+msgstr ""
+
+#: src/exports/class-customers.php:17
+msgid "Address 1"
+msgstr ""
+
+#: src/exports/class-customers.php:18
+msgid "Address 2"
+msgstr ""
+
+#: src/exports/class-customers.php:19
+msgid "City"
+msgstr ""
+
+#: src/exports/class-customers.php:20
+msgid "Postcode"
+msgstr ""
+
+#: src/exports/class-customers.php:21
+msgid "Country"
+msgstr ""
+
+#: src/exports/class-customers.php:22
+msgid "State"
+msgstr ""
+
+#: src/exports/class-customers.php:23
+msgid "Telephone"
+msgstr ""
+
+#: src/exports/class-customers.php:24 src/exports/class-emails.php:14
+msgid "Email"
 msgstr ""
