@@ -5,6 +5,15 @@ namespace Frozzare\WooCommerce\Export\Writers;
 class CSV extends Writer {
 
 	/**
+	 * Get the content type.
+	 *
+	 * @var string
+	 */
+	protected function get_content_type() {
+		return 'text/csv';
+	}
+
+	/**
 	 * Get the file extension.
 	 *
 	 * @var string
@@ -18,13 +27,7 @@ class CSV extends Writer {
 	 *
 	 * @param array $data
 	 */
-	public function render( array $data ) {
-		if ( $this->is_http_post() ) {
-			header( 'Content-Description: File Transfer' );
-			header( 'Content-Disposition: attachment; filename=' . $this->get_filename() );
-			header( 'Content-Type: text/csv; charset=' . get_option( 'blog_charset' ), true );
-		}
-
+	protected function render( array $data ) {
 		// Output CSV headers.
 		if ( isset( $data[0] ) ) {
 			echo implode( ";", array_keys( $data[0] ) ) . "\n";
@@ -44,7 +47,5 @@ class CSV extends Writer {
 
 			echo $line . "\n";
 		}
-
-		$this->is_http_post() && exit;
 	}
 }

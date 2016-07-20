@@ -19,12 +19,12 @@ class XML_Test extends \WP_UnitTestCase {
 	}
 
 	public function test_empty() {
-		$this->writer->render( [] );
+		$this->writer->write( [] );
 		$this->expectOutputString( '<?xml version="1.0"?><orders></orders>' );
 	}
 
 	public function test_success() {
-		$this->writer->render( [
+		$this->writer->write( [
 			[
 				'Email' => 'hello@example.com'
 			],

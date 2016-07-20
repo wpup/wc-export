@@ -83,6 +83,13 @@ use Frozzare\WooCommerce\Export\Writers\Writer;
 class Custom_JSON extends Writer {
 
 	/**
+	 * The content type.
+	 *
+	 * @var string
+	 */
+	protected $content_type = 'application/json';
+
+	/**
 	 * Get the file extension.
 	 *
 	 * @var string
@@ -96,13 +103,7 @@ class Custom_JSON extends Writer {
 	 *
 	 * @param array $data
 	 */
-	public function render( array $data ) {
-		if ( $this->is_http_post() ) {
-			header( 'Content-Description: File Transfer' );
-			header( 'Content-Disposition: attachment; filename=' . $this->get_filename() );
-			header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ), true );
-		}
-
+	protected function render( array $data ) {
 		foreach ( $data as $index => $row ) {
 			if ( ! is_array( $row ) ) {
 				unset( $data[$index] );
@@ -110,8 +111,6 @@ class Custom_JSON extends Writer {
 		}
 
 		echo json_encode( $data, JSON_UNESCAPED_UNICODE );
-
-		$this->is_http_post() && exit;
 	}
 }
 ```

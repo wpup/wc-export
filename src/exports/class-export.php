@@ -72,8 +72,8 @@ abstract class Export {
 			return;
 		}
 
-		// Let the writer render the data.
-		$writer->render( $data );
+		// Let the writer write the data.
+		$writer->write( $data );
 	}
 
 	/**

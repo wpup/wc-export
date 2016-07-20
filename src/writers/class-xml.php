@@ -5,6 +5,15 @@ namespace Frozzare\WooCommerce\Export\Writers;
 class XML extends Writer {
 
 	/**
+	 * Get the content type.
+	 *
+	 * @var string
+	 */
+	protected function get_content_type() {
+		return 'text/xml';
+	}
+
+	/**
 	 * Get the file extension.
 	 *
 	 * @var string
@@ -18,13 +27,7 @@ class XML extends Writer {
 	 *
 	 * @param array $data
 	 */
-	public function render( array $data ) {
-		if ( $this->is_http_post() ) {
-			header( 'Content-Description: File Transfer' );
-			header( 'Content-Disposition: attachment; filename=' . $this->get_filename() );
-			header( 'Content-Type: text/xml; charset=' . get_option( 'blog_charset' ), true );
-		}
-
+	protected function render( array $data ) {
 		echo '<?xml version="1.0"?>';
 		echo '<orders>';
 
@@ -47,7 +50,5 @@ class XML extends Writer {
 		}
 
 		echo '</orders>';
-
-		$this->is_http_post() && exit;
 	}
 }

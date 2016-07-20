@@ -5,6 +5,15 @@ namespace Frozzare\WooCommerce\Export\Writers;
 class JSON extends Writer {
 
 	/**
+	 * Get the content type.
+	 *
+	 * @var string
+	 */
+	protected function get_content_type() {
+		return 'application/json';
+	}
+
+	/**
 	 * Get the file extension.
 	 *
 	 * @var string
@@ -18,13 +27,7 @@ class JSON extends Writer {
 	 *
 	 * @param array $data
 	 */
-	public function render( array $data ) {
-		if ( $this->is_http_post() ) {
-			header( 'Content-Description: File Transfer' );
-			header( 'Content-Disposition: attachment; filename=' . $this->get_filename() );
-			header( 'Content-Type: application/json; charset=' . get_option( 'blog_charset' ), true );
-		}
-
+	protected function render( array $data ) {
 		foreach ( $data as $index => $row ) {
 			if ( ! is_array( $row ) ) {
 				unset( $data[$index] );
@@ -32,7 +35,5 @@ class JSON extends Writer {
 		}
 
 		echo json_encode( $data, JSON_UNESCAPED_UNICODE );
-
-		$this->is_http_post() && exit;
 	}
 }
