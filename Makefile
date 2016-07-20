@@ -6,6 +6,12 @@ POT_NAME := plugin-name
 POT_FILE := languages/plugin-name.pot
 POT_SOURCE := $(shell find src -name '*.php' -type f)
 
+deps:
+	composer install
+	npm install
+	brew install gettext
+	brew link --force gettext
+
 lint:
 	make lint:js
 	make lint:php
