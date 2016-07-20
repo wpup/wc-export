@@ -207,7 +207,7 @@ class Admin {
 	 * - WP_LANG_DIR/wc-export/wc-export-LOCALE.mo
 	 * - WP_CONTENT_DIR/[mu-]plugins/wc-export/languages/wc-export-LOCALE.mo
 	 */
-	private function load_textdomain() {
+	public function load_textdomain() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc-export' );
 		load_textdomain( 'wc-export', WP_LANG_DIR . '/wc-export/wc-export-' . $locale . '.mo' );
 		load_textdomain( 'wc-export', __DIR__ . '../languages/wc-export-' . $locale . '.mo' );
