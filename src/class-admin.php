@@ -285,7 +285,7 @@ class Admin {
 							<td>
 								<input type="text" name="wc_export_start_date" id="wc-export-start-date">
 								<p class="description">
-									<?php _e( 'Leave empty for no start date', 'wc-export'  ); ?>
+									<?php _e( 'Leave empty for no start date', 'wc-export' ); ?>
 								</p>
 							</td>
 						</tr>
@@ -297,7 +297,7 @@ class Admin {
 							<td>
 								<input type="text" name="wc_export_end_date" id="wc-export-end-date">
 								<p class="description">
-									<?php _e( 'Leave empty for no end date', 'wc-export'  ); ?>
+									<?php _e( 'Leave empty for no end date', 'wc-export' ); ?>
 								</p>
 							</td>
 						</tr>
@@ -339,7 +339,7 @@ class Admin {
 							</th>
 							<td>
 								<p class="description">
-									<?php _e( 'All fields will be included if none is selected.', 'wc-export'  ); ?>
+									<?php _e( 'All fields will be included if none is selected.', 'wc-export' ); ?>
 								</p>
 								<ul id="wc-export-include-fields">
 								<?php if ( class_exists( $export ) ): ?>

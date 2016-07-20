@@ -30,7 +30,7 @@ class CSV extends Writer {
 	protected function render( array $data ) {
 		// Output CSV headers.
 		if ( isset( $data[0] ) ) {
-			echo implode( ";", array_keys( $data[0] ) ) . "\n";
+			echo implode( ';', array_keys( $data[0] ) ) . "\n";
 		}
 
 		// Output each row as a line.

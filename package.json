@@ -1,0 +1,15 @@
+{
+  "name": "wc-export",
+  "version": "1.0.0",
+  "repository": "frozzare/wc-export",
+  "description": "Export various data from WooCommerce",
+  "author": "Fredrik Forsmo <fredrik.forsmo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^2.11",
+    "eslint-config-semistandard": "^6.0",
+    "eslint-config-standard": "^5.3",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^1.3"
+  }
+}
