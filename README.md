@@ -83,11 +83,13 @@ use Frozzare\WooCommerce\Export\Writers\Writer;
 class Custom_JSON extends Writer {
 
 	/**
-	 * The content type.
+	 * Get the content type.
 	 *
 	 * @var string
 	 */
-	protected $content_type = 'application/json';
+	protected function get_content_type() {
+		return 'application/json';
+	}
 
 	/**
 	 * Get the file extension.
