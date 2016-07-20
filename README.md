@@ -2,12 +2,6 @@
 
 Export various data from WooCommerce.
 
-## ToC
-* [Installation](#installation)
-* [Documentation](#documentation)
-  * [Custom export](#custom-export)
-  * [Custom writer](#custom-writer)
-
 ## Installation
 
 ```sh
@@ -15,6 +9,9 @@ composer require frozzare/wc-export
 ```
 
 ## Documentation
+
+* [Custom export](#custom-export)
+* [Custom writer](#custom-writer)
 
 ### Custom export
 
