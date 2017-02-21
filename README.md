@@ -1,4 +1,4 @@
-# WooCommerce Export [![Build Status](https://travis-ci.org/wpup/export.svg?branch=master)](https://travis-ci.org/wpup/export)
+# WooCommerce Export [![Build Status](https://travis-ci.org/wpup/wc-export.svg?branch=master)](https://travis-ci.org/wpup/wc-export)
 
 Export various data from WooCommerce.
 
