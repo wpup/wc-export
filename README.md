@@ -1,4 +1,7 @@
-# WooCommerce Export [![Build Status](https://travis-ci.org/wpup/wc-export.svg?branch=master)](https://travis-ci.org/wpup/wc-export)
+# WooCommerce Export 
+
+[![Build Status](https://travis-ci.org/wpup/wc-export.svg?branch=master)](https://travis-ci.org/wpup/wc-export)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Export various data from WooCommerce.
 
